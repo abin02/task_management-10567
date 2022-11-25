@@ -8,7 +8,7 @@ const taskModal = document.querySelector(".task_modal_body");
 const htmlTaskContent = ({ id, title, description, type, url }) => `
     <div class="col-md-6 col-lg-4 mt-3" id=${id} key=${id}>
         <div class="card shadow-sm task_card">
-            <div class="card-header d-flex justify-content-end task_card_header">
+            <div class="card-header bg-dark d-flex justify-content-end task_card_header">
                 <button type="button" class="btn btn-outline-info me-1" name=${id} onclick="editTask.apply(this,arguments)">
                     <i class='fas fa-pencil-alt' name=${id}></i>
                 </button>
@@ -16,7 +16,7 @@ const htmlTaskContent = ({ id, title, description, type, url }) => `
                     <i class='fas fa-trash-alt' name=${id}></i>
                 </button>
             </div>
-            <div class="card-body">
+            <div class="card-body bg-light">
                 ${url ? `<img width="100%" height= "150px" style= "object-fit: cover; object-position: center" src=${url} alt="card image cap" class="card-image-top md-3 rounded-lg">`
         : '<img width="100%" height="150px" style= "object-fit: cover; object-position: center"  src="https://reactnativecode.com/wp-content/uploads/2018/02/Default_Image_Thumbnail.png" alt="card image cap" class="card-image-top md-3 rounded-lg">'
     }
@@ -28,7 +28,7 @@ const htmlTaskContent = ({ id, title, description, type, url }) => `
                     <span class="badge bg-primary m-1">${type}</span>
                 </div>
             </div>
-            <div class="card-footer">
+            <div class="card-footer bg-dark">
                 <button type="button" class="btn btn-outline-primary float-right" data-bs-toggle="modal" data-bs-target="#showTask" id=${id} onclick="openTask.apply(this,arguments)">
                     Open Task
                 </button>
